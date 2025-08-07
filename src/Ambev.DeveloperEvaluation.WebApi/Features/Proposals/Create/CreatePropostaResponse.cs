@@ -1,0 +1,57 @@
+﻿using Indt.Proposta.Domain.Enums;
+
+namespace Indt.Proposta.WebApi.Features.Proposals.Create;
+
+public class CreatePropostaResponse
+{
+    public int Id { get; set; }
+    public string Numero { get; set; }
+    public DateTime DataProposta { get; set; }
+    public OperacaoTipo TipoOperacao { get; set; }
+    public string AgenteTipo { get; set; }
+    public string AgenteNome { get; set; }
+    public string AgenteCNPJ { get; set; }
+    public string Susep { get; set; }
+    public string ProponenteNome { get; set; }
+    public string ProponenteCPF { get; set; }
+    public string ProponenteTipo { get; set; }
+    public string ProponenteEndereco { get; set; }
+    public string ProponenteBairro { get; set; }
+    public string ProponenteCidade { get; set; }
+    public string ProponenteUF { get; set; }
+    public string ProponenteCEP { get; set; }
+    public string ProponenteTelefone { get; set; }
+    public string ProponenteEmail { get; set; }
+    public DateTime ProponenteDataNascimento { get; set; }
+    public string BemSeguradoTipoImovel { get; set; }
+    public string BemSeguradoUtilizacaoImovel { get; set; }
+    public bool BemSeguradoAtividadeComercial { get; set; }
+    public string BemSeguradoAtividadeEndereco { get; set; }
+    public string BemSeguradoAtividadeBairro { get; set; }
+    public string BemSeguradoAtividadeCidade { get; set; }
+    public string BemSeguradoAtividadeUF { get; set; }
+    public string BemSeguradoAtividadeCEP { get; set; }
+    public ProposalStatus Status { get; set; }
+    public DateTime CreatedAt { get; set; }
+    public DateTime? UpdatedAt { get; set; }
+
+    public virtual IEnumerable<CreateBeneficiarioResponse> Beneficiarios { get; set; }
+    public virtual IEnumerable<CreateCoberturaResponse> Coberturas { get; set; }
+}
+
+public class CreateCoberturaResponse
+{
+    public int Id { get; set; }
+    public string Nome { get; set; }
+    public decimal LimiteMaximoIndenizacao { get; set; }
+    public decimal ParticipacaoFranquia { get; set; }
+    public decimal PremioCobertura { get; set; }
+}
+
+public class CreateBeneficiarioResponse
+{
+    public int Id { get; set; }
+    public BeneficiatioTipo Tipo { get; set; }
+    public string Nome { get; set; }
+    public string CpfCnpj { get; set; }
+}
